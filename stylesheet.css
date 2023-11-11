@@ -1,0 +1,220 @@
+/* screen devices (not printer/terminal) */
+@media screen and (grid: 0) {
+    /* inverted/non-inverted colours can use the same rules */
+    /* monochrome is also fine, as is inverted monochrome */
+    html {
+        background-color: lightgrey;
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 180%;
+    }
+    body {
+        color: black;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 1.125rem;
+        line-height: 1.8;
+        padding: 0px 20px;
+    }
+    section, header {
+        border: 1px solid black;
+        box-shadow: 3px 3px black;
+        background-color: white;
+        margin: 20px auto;
+        max-width: 1000px;
+        --dark-color: grey;
+        --med-color: lightgrey;
+        --light-color: white;
+    }
+    a, a:link {
+        color: black;
+        cursor: auto;
+        border-bottom: 1px solid var(--dark-color);
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    a:hover {
+        background-color: var(--med-color);
+    }
+    h1 {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        margin: 0px;
+    }
+    h2, h3 {
+        font-size: 1.25rem;
+    }
+    ul {
+        list-style: square;
+    }
+    .head {
+        display: flex;
+        aspect-ratio: 3/1;
+        --bg-png: url('assets/header.png');
+        --bg-svg: url('assets/header.svg');
+    }
+    .head span {
+        margin-top: auto;
+    }
+    .about {
+        --bg-png: url('assets/about.png');
+        --bg-svg: url('assets/about.svg');
+    }
+    .contact {
+        --bg-png: url('assets/contact.png');
+        --bg-svg: url('assets/contact.svg');
+    }
+    .code {
+        --bg-png: url('assets/code.png');
+        --bg-svg: url('assets/code.svg');
+    }
+    .publications {
+        --bg-png: url('assets/publications.png');
+        --bg-svg: url('assets/publications.svg');
+    }
+    .speaking {
+        --bg-png: url('assets/speaking.png');
+        --bg-svg: url('assets/speaking.svg');
+    }
+    .teaching{
+        --bg-png: url('assets/teaching.png');
+        --bg-svg: url('assets/teaching.svg');
+    }
+    .outreach {
+        --bg-png: url('assets/outreach.png');
+        --bg-svg: url('assets/outreach.svg');
+    }
+    .recognition {
+        --bg-png: url('assets/recognition.png');
+        --bg-svg: url('assets/recognition.svg');
+    }
+    .other {
+        --bg-png: url('assets/other.png');
+        --bg-svg: url('assets/other.svg');
+    }
+    .sectionhead {
+        background-color: var(--light-color);
+        background-image: var(--bg-svg);
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-bottom: 1px solid grey;
+        padding: 1px 30px;
+    }
+    .sectionbody {
+        padding: 10px 30px;
+    }
+    .red-section {
+        --dark-color: #F08064;
+        --med-color: #FFBAA9;
+        --light-color: #FFF7F4;
+    }
+    .blue-section {
+        --dark-color: #5092DB;
+        --med-color: #CAE3FF;
+        --light-color: #E9F5FE;
+    }
+    .green-section {
+        --dark-color: #9ED89D;
+        --med-color: #D4F3D3;
+        --light-color: #F2F9F2;
+    }
+    .yellow-section {
+        --dark-color: #EEB958;
+        --med-color: #FCE9B0;
+        --light-color: #FFFDEE;
+    }
+    .footnote {
+        font-size: 11px;
+        --dark-color: grey;
+        --med-color: lightgrey;
+        --light-color: white;
+    }
+    .promo-banner {
+        color: white;
+        background-color: black;
+        padding: 1px 30px;
+    }
+    .promo-banner p {
+        font-size: 11px;
+        padding: 0px;
+        margin: 10px 0px;
+    }
+    .promo-banner a, .promo-banner a:link .promo-banner a:visited{
+        color: white;
+    }
+    .promo-banner a:hover {
+        color: black;
+    }
+    .location {
+        display: flex;
+        height: 6em;
+        --bg-png: url('assets/location.png');
+        --bg-svg: url('assets/location.svg');
+    }
+    .location p {
+        max-width: 50%;
+        margin: auto 0px auto auto;
+    }
+    .highlight {
+        border-top: 1px solid black;
+        background-color: var(--light-color);
+        background-image: var(--bg-svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    /* dark mode */
+    /* TODO */
+    /* touch devices */
+    @media (hover: none) {
+        .sectionhead {
+            background-image: var(--bg-png);
+        }
+        a:hover {
+            color: inherit;
+        }
+    }
+    /* upright screen */
+    @media (orientation: portrait) {
+        h1 {
+            -webkit-text-size-adjust: 140%;
+        }
+    }
+    /* low-data or atypical environments */
+    @media (prefers-reduced-data: reduce) {
+        .sectionhead {
+            background-image: none;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: #333; /* Darker background for dark mode */
+    }
+    body {
+        color: #fff; /* Light text on dark background */
+        background-color: #222; /* Dark background for body */
+    }
+    section, header {
+        border-color: #555; /* Darker borders */
+        background-color: #333; /* Dark background for sections */
+    }
+    a, a:link {
+        color: #4d90fe; /* Lighter link color */
+    }
+    .sectionhead {
+        background-color: #444;
+        border-bottom-color: #555;
+    }
+    .red-section, .blue-section, .green-section, .yellow-section {
+        --dark-color: #333;
+        --med-color: #555;
+        --light-color: #777;
+    }
+    .footnote, .promo-banner {
+        background-color: #333;
+        border-color: #555;
+    }
+    .location, .highlight {
+        background-color: #444;
+    }
+}
