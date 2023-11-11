@@ -185,36 +185,3 @@
         }
     }
 }
-
-@media (prefers-color-scheme: dark) {
-    html {
-        background-color: #333; /* Darker background for dark mode */
-    }
-    body {
-        color: #fff; /* Light text on dark background */
-        background-color: #222; /* Dark background for body */
-    }
-    section, header {
-        border-color: #555; /* Darker borders */
-        background-color: #333; /* Dark background for sections */
-    }
-    a, a:link {
-        color: #4d90fe; /* Lighter link color */
-    }
-    .sectionhead {
-        background-color: #444;
-        border-bottom-color: #555;
-    }
-    .red-section, .blue-section, .green-section, .yellow-section {
-        --dark-color: #333;
-        --med-color: #555;
-        --light-color: #777;
-    }
-    .footnote, .promo-banner {
-        background-color: #333;
-        border-color: #555;
-    }
-    .location, .highlight {
-        background-color: #444;
-    }
-}
