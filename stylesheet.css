@@ -14,12 +14,20 @@
         line-height: 1.8;
         padding: 0px 20px;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     section, header {
         border: 1px solid black;
         box-shadow: 3px 3px black;
         background-color: white;
         margin: 20px auto;
-        max-width: 1000px;
+        max-width: auto;
+        padding: 10px;
+
+
         --dark-color: grey;
         --med-color: lightgrey;
         --light-color: white;
