@@ -1,154 +1,557 @@
-/* screen devices (not printer/terminal) */
-@media screen and (grid: 0) {
-    /* inverted/non-inverted colours can use the same rules */
-    /* monochrome is also fine, as is inverted monochrome */
-    html {
-        background-color: lightgrey;
-        scroll-behavior: smooth;
-        -webkit-text-size-adjust: 180%;
+html {
+    --accent-blue: #3338dd;
+    --accent-green: #42a853;
+    --accent-pink: #f3a3d5;
+    --accent-orange: #ff542f;
+    --accent-yellow: #f6be0c;
+    --main-beige: #ece7db;
+    --main-grey: #212125;
+    --main-light-grey: #aaa7ad;
+    --body-fonts: "Montserrat",system-ui,ui-sans-serif,sans-serif;
+    font-family: var(--body-fonts);
+    font-size: 3.2vmin;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    background-color: var(--main-grey);
+    color: var(--main-beige);
+    margin: 0
+}
+
+.container {
+    background-color: var(--main-beige);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: var(--main-grey);
+    padding: .25rem
+}
+
+.container:before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 1000px;
+    top: -999px;
+    left: 0;
+    background-color: var(--main-beige);
+    z-index: -10
+}
+
+.flex {
+    display: flex;
+    gap: .25rem
+}
+
+.flex-columns,.flex-variable {
+    flex-direction: column
+}
+
+.flex-rows {
+    flex-direction: row
+}
+
+.flex-variable-reversed {
+    flex-direction: column-reverse
+}
+
+.flex-wrap {
+    flex-wrap: wrap
+}
+
+.flex-edges {
+    justify-content: space-between
+}
+
+.tile {
+    background-color: #fff;
+    border-radius: .75rem;
+    padding: 2rem;
+    position: relative
+}
+
+.tile p {
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+.img-tile {
+    background-position: center;
+    background-size: cover;
+    min-height: 40vmin;
+    display:flex;
+    overflow:hidden;
+    align-items: center;
+    justify-content:center;
+}
+
+.img-tile:before {
+    background-color: var(--main-beige);
+    border-radius: 9999px;
+    padding: 0 .3em
+}
+.img-tile img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+header,main {
+    margin: 0 auto
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    gap: .25rem;
+    padding-bottom: .25rem
+}
+
+header .tile {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    font-weight: 700;
+    justify-content: center;
+    padding: 1.25rem;
+    padding-left: 2rem;
+    word-spacing: 100vw
+}
+
+section {
+    position: relative
+}
+
+footer {
+    margin: 0 auto;
+    max-width: 36rem;
+    padding: 10vh 1.25rem
+}
+
+footer p {
+    font-size: .875rem;
+    line-height: 1.25rem
+}
+
+img {
+    object-fit: contain
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+    margin: 0
+}
+
+h1 em {
+    color: var(--accent-orange);
+    font-style: normal
+}
+
+h2 {
+    font-weight: 400;
+    margin: 0;
+    padding-top: 1rem
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 2rem;
+    margin: 0
+}
+
+a:any-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted
+}
+
+a:hover {
+    text-decoration-style: solid
+}
+
+p em {
+    background-color: var(--main-beige);
+    border-radius: 9999px;
+    color: var(--main-grey);
+    font-style: normal;
+    padding: 0 .3em
+}
+
+button {
+    background-color: var(--main-beige);
+    border: 0;
+    border-radius: 9999px;
+    color: var(--main-grey);
+    font-family: var(--body-fonts);
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2rem;
+    margin-top: 1rem;
+    padding: .2rem 1rem;
+    text-align: left;
+    width: 100%
+}
+
+button:hover {
+    background-color: var(--main-grey);
+    color: var(--main-beige)
+}
+
+button:after {
+    content: " \002192"
+}
+
+.yellow {
+    background-color: var(--accent-yellow)
+}
+
+.larger {
+    font-size: 1.3rem;
+    line-height: 2rem
+}
+
+.smaller {
+    font-size: .875rem;
+    line-height: 1.25rem
+}
+
+.padded-top {
+    padding-top: 3rem
+}
+
+.align-bottom {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.social-icon {
+    align-items: center;
+    background-color: var(--accent-orange);
+    border-radius: 9999px;
+    display: flex;
+    flex-grow: 0;
+    justify-content: center;
+    margin: 0;
+    padding: .5rem;
+    min-width: 4rem
+}
+
+.social-icon svg {
+    height: 24px;
+    width: 24px;
+}
+
+.social-icon:hover {
+    background-color: var(--accent-blue)
+}
+
+.stamp {
+    background-image: url(./assets/stamp.svg);
+    background-size: contain;
+    bottom: -1.25rem;
+    position: absolute;
+    right: 8%;
+    height: 120px;
+    width: 120px;
+    z-index: 5
+}
+
+.showcase {
+    background-color: #fff;
+    border: .25rem solid #fff;
+    border-radius: .75rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch
+}
+
+.showcase,.showcase * {
+    -ms-overflow-style: none
+}
+
+.showcase::-webkit-scrollbar {
+    width: 0;
+    height: 0
+}
+
+/* .showcase .tile {
+    background-color: var(--main-light-grey);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    justify-content: space-between;
+    min-height: 21.5rem;
+    min-width: 15rem;
+    scroll-snap-align: start
+} */
+
+.showcase .tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1.5rem;
+    background-color: var(--main-grey);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    min-height: 350px; /* Ensures a consistent height for all cards */
+    min-width: 350px;
+}
+
+.showcase .tile img {
+    object-fit: contain;
+    width: 100%
+}
+.showcase .tile h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--main-beige);
+}
+.showcase .tile p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--main-beige);
+    margin: 0.5rem 0;
+    flex-grow: 1; /* Allows the text to occupy the available space */
+}
+/* .showcase .tile h2,.showcase .tile h3,.showcase .tile p:first-child {
+    margin-top: 0;
+    padding-top: 0
+} */
+/* Adjust the tag styling for consistency and readability */
+.showcase .tile p em {
+    background-color: var(--accent-yellow);
+    color: var(--main-grey);
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.875rem; /* Slightly smaller font size for tags */
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.showcase .tile p em:hover {
+    background-color: var(--accent-orange); /* Adds a hover effect to the tags */
+}
+
+/* Additional adjustments for responsiveness */
+@media (max-width: 768px) {
+    .showcase .tile {
+        min-height: 300px; /* Adjust height for smaller screens */
     }
-    body {
-        color: black;
-        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-        font-size: 1.125rem;
-        line-height: 1.8;
-        padding: 0px 20px;
-    }
-    section, header {
-        border: 1px solid black;
-        box-shadow: 3px 3px black;
-        background-color: white;
-        margin: 20px auto;
-        max-width: 1000px;
-        --dark-color: grey;
-        --med-color: lightgrey;
-        --light-color: white;
-    }
-    a, a:link {
-        color: black;
-        cursor: auto;
-        border-bottom: 1px solid var(--dark-color);
-        text-decoration: none;
-        transition: 0.3s;
-    }
-    a:hover {
-        background-color: var(--med-color);
-    }
-    h1 {
-        font-size: 3.5rem;
-        line-height: 3.5rem;
-        margin: 0px;
-    }
-    h2, h3 {
+
+    .showcase .tile h3 {
         font-size: 1.25rem;
     }
-    ul {
-        list-style: square;
-    }
-    .head {
-        display: flex;
-        aspect-ratio: 3/1;
-        --bg-png: url('assets/header.png');
-        --bg-svg: url('assets/header.svg');
-    }
-    .head span {
-        margin-top: auto;
-    }
-    .about {
-        --bg-png: url('assets/about.png');
-        --bg-svg: url('assets/about.svg');
-    }
-    .contact {
-        --bg-png: url('assets/contact.png');
-        --bg-svg: url('assets/contact.svg');
-    }
-    .code {
-        --bg-png: url('assets/code.png');
-        --bg-svg: url('assets/code.svg');
-    }
-    .publications {
-        --bg-png: url('assets/publications.png');
-        --bg-svg: url('assets/publications.svg');
-    }
-    .speaking {
-        --bg-png: url('assets/speaking.png');
-        --bg-svg: url('assets/speaking.svg');
-    }
-    .teaching{
-        --bg-png: url('assets/teaching.png');
-        --bg-svg: url('assets/teaching.svg');
-    }
-    .outreach {
-        --bg-png: url('assets/outreach.png');
-        --bg-svg: url('assets/outreach.svg');
-    }
-    .recognition {
-        --bg-png: url('assets/recognition.png');
-        --bg-svg: url('assets/recognition.svg');
-    }
-    .other {
-        --bg-png: url('assets/other.png');
-        --bg-svg: url('assets/other.svg');
-    }
-    .sectionhead {
-        background-color: var(--light-color);
-        background-image: var(--bg-svg);
-        background-position: bottom right;
-        background-repeat: no-repeat;
-        background-size: contain;
-        border-bottom: 1px solid grey;
-        padding: 1px 30px;
-    }
-    .sectionbody {
-        padding: 10px 30px;
-    }
-    .red-section {
-        --dark-color: #F08064;
-        --med-color: #FFBAA9;
-        --light-color: #FFF7F4;
-    }
-    .blue-section {
-        --dark-color: #5092DB;
-        --med-color: #CAE3FF;
-        --light-color: #E9F5FE;
-    }
-    .green-section {
-        --dark-color: #9ED89D;
-        --med-color: #D4F3D3;
-        --light-color: #F2F9F2;
-    }
-    .yellow-section {
-        --dark-color: #EEB958;
-        --med-color: #FCE9B0;
-        --light-color: #FFFDEE;
-    }
-    .footnote {
-        font-size: 11px;
-        --dark-color: grey;
-        --med-color: lightgrey;
-        --light-color: white;
-    }
-    /* dark mode */
-    /* TODO */
-    /* touch devices */
-    @media (hover: none) {
-        .sectionhead {
-            background-image: var(--bg-png);
-        }
-        a:hover {
-            color: inherit;
-        }
-    }
-    /* upright screen */
-    @media (orientation: portrait) {
-        h1 {
-            -webkit-text-size-adjust: 140%;
-        }
-    }
-    /* low-data or atypical environments */
-    @media (prefers-reduced-data: reduce) {
-        .sectionhead {
-            background-image: none;
-        }
+
+    .showcase .tile p em {
+        font-size: 0.75rem; /* Further reduce tag size on smaller screens */
+        padding: 0.2rem 0.5rem;
     }
 }
+#showcase-start {
+    background-color: var(--accent-green)
+}
+
+#showcase-end {
+    background-color: var(--accent-yellow)
+}
+
+.scroll-indicator {
+    --indicator-size: 2rem;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: calc(var(--indicator-size) * 1.4);
+    height: calc(var(--indicator-size) * 2);
+    position: absolute;
+    position-anchor: center;
+    text-align: center;
+    text-decoration: none!important;
+    top: calc(50% - var(--indicator-size));
+    width: var(--indicator-size)
+}
+
+.indicator-left {
+    border-radius: 0 100% 100% 0/0 50% 50% 0;
+    left: 0
+}
+
+.indicator-right {
+    border-radius: 100% 0 0 100%/50% 0 0 50%;
+    right: 0
+}
+
+.indicator-right:active {
+    transform: translateX(10px);
+}
+
+.animated-text:before {
+    content: "\002014  I do ";
+    font-weight: 700
+}
+
+.animated-text:after {
+    animation: replaceWords 8s linear infinite;
+    color: var(--accent-blue);
+    content: "software.";
+    font-weight: 700
+}
+
+@keyframes replaceWords {
+    0% {
+        content: "software."
+    }
+
+    20% {
+        content: "research."
+    }
+
+    40% {
+        content: "product development."
+    }
+
+    60% {
+        content: "design."
+    }
+
+    80% {
+        content: "continuing education."
+    }
+    100% {
+        content: "consulting."
+    }
+    120% {
+        content: ""
+    }
+}
+
+#header-img {
+    background-image: url(./assets/header-min.webp)
+}
+
+
+#showcase-img {
+    content: url(./assets/showcase.svg)
+}
+
+#books-img {
+    content: url(./assets/books.png)
+}
+
+#collab-img {
+    background-image: url(./assets/mars-min.webp)
+}
+
+
+
+#logo {
+    background-image: url(./assets/logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 3rem;
+    margin-top: 3rem
+}
+
+@media (min-width: 768px) and (orientation: landscape), 
+       (min-width: 768px) and (min-aspect-ratio: 9/16) {
+    h1 {
+        font-size:4vw;
+        line-height: 1
+    }
+
+    .container {
+        padding: 2.5rem
+    }
+
+    .flex-variable {
+        flex-direction: row
+    }
+
+    .flex-variable .tile {
+        width: 60%
+    }
+
+    .flex-variable .img-tile {
+        width: 40%
+    }
+
+    .flex-variable-reversed {
+        flex-direction: row
+    }
+
+    .flex-variable-reversed .tile {
+        width: 50%
+    }
+
+    .stamp {
+        bottom: -2.5rem;
+        height: 200px;
+        width: 200px
+    }
+
+    .padded-top {
+        padding-top: 5rem
+    }
+
+    .highlight {
+        aspect-ratio: .7
+    }
+}
+
+.hidden {
+    position: absolute!important;
+    width: 1px!important;
+    height: 1px!important;
+    padding: 0!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    clip: rect(0,0,0,0)!important;
+    white-space: nowrap!important;
+    border: 0!important
+}
+.skills-tags {
+    
+    font-size: 1rem;
+
+}
+
+.skills-tags h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--main-grey);
+    font-weight: 200; /* Bold for headers */
+}
+
+.skills-tags p {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skills-tags em {
+    background-color: var(--accent-yellow);
+    border-radius: 20px;
+    color: var(--main-grey);
+    padding: 0.25rem 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.skills-tags em:hover {
+    background-color: var(--accent-green);
+}
+
