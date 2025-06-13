@@ -1,10 +1,15 @@
 function scrollElementLeft(elementId) {
-    showcase = document.getElementById(elementId);
-    tileWidth = document.getElementById(elementId + "-start").offsetWidth;
-    showcase.scrollLeft -= tileWidth
+    const showcase = document.getElementById(elementId);
+    if (showcase && showcase.firstElementChild) {
+        const tileWidth = showcase.firstElementChild.getBoundingClientRect().width;
+        showcase.scrollBy({ left: -tileWidth, behavior: 'smooth' });
+    }
 }
+
 function scrollElementRight(elementId) {
-    showcase = document.getElementById(elementId);
-    tileWidth = document.getElementById(elementId + "-start").offsetWidth;
-    showcase.scrollLeft += tileWidth
+    const showcase = document.getElementById(elementId);
+    if (showcase && showcase.firstElementChild) {
+        const tileWidth = showcase.firstElementChild.getBoundingClientRect().width;
+        showcase.scrollBy({ left: tileWidth, behavior: 'smooth' });
+    }
 }

@@ -32,6 +32,15 @@
                 aria-label="LinkedIn link">
                 <img src="./assets/linkedin.svg" alt="linkedin logo">
             </a>
+            <div class="theme-switch-container" role="group" aria-label="Theme toggle">
+                <label class="theme-switch" for="theme-checkbox-input" aria-label="Switch to dark or light theme">
+                    <input type="checkbox" id="theme-checkbox-input" />
+                    <div class="slider">
+                        <div class="icon sun"></div>
+                        <div class="icon moon"></div>
+                    </div>
+                </label>
+            </div>
         </header>
 
         <main id="main" role="main" class="flex flex-columns">
@@ -55,24 +64,6 @@
                     <img src="./assets/header.webp" alt="Saheb at work">
                 </div>
             </section>
-
-            <!-- <section id="section-about" class="flex flex-columns">
-    <div class="tile">
-    <h2 class="padded-top">What I'm About</h2>
-    </div>
-    <div class="flex flex-variable-reversed">
-    <div id="about-img" role="img" class="tile img-tile smaller align-bottom" aria-label="Visual representation of Saheb's diverse skill set">
-    <img src="/api/placeholder/400/300" alt="Saheb's skills">
-    </div>
-    <div class="tile padded-top">
-        <p class="larger">I’m a problem solver at heart, always looking for that elegant solution that makes everything click.</p>
-        <p>My journey in tech began on the bustling streets of Mumbai, where I first started coding to solve everyday problems. Fast forward to today, and I’m at Google, working on search algorithms that touch billions of lives. It’s surreal to think that something I worked on helps someone find what they need faster, all over the world.</p>
-        <p>But what drives me isn’t just the scale or the technology—it’s the impact. When a project like revamping Google Books' partner selection saves $800K annually, that’s real change. It’s about creating solutions that don’t just work—they matter.</p>
-        <p>Outside of Google, I channel this passion into the startup ecosystem, helping fledgling companies build tech that’s not only innovative but scalable. It's a thrill to see a startup grow and know you played a part in that success.</p>
-        <p>My time at Carnegie Mellon was a game-changer. It was intense, sure, but it equipped me with the skills to tackle any challenge thrown my way. Whether it's optimizing a search engine or mentoring a team, I’m all in.</p>
-    </div>
-    </div>
-</section> -->
 
             <section id="section-about" class="flex flex-columns">
                 <div class="tile">
@@ -143,7 +134,7 @@
                     <div id="showcase-start" class="tile">
                         <h2>Project Portfolio</h2>
                         <div>
-                            <img id="showcase-img" src="/api/placeholder/300/200" alt="Project showcase" aria-hidden="true" loading="lazy">
+                            <img id="showcase-img" src="./assets/showcase.svg" alt="Project showcase" loading="lazy">
                             <p>Innovative solutions driving technological advancement and business growth.</p>
                         </div>
                     </div>
@@ -234,12 +225,12 @@
             </section>
             
 
-            <section id="section-showcase">
+            <section id="section-testimonials">
                 <div id="showcase" class="flex showcase">
                     <div id="showcase-start" class="tile">
                         <h2>Cool People I've Worked With</h2>
                         <div>
-                            <img id="showcase-img" src="/api/placeholder/300/200" alt="Project showcase"
+                            <img id="testimonials-placeholder-img" src="/api/placeholder/300/200" alt="Placeholder image for testimonials section"
                                 aria-hidden="true" loading="lazy">
                             <p>These are dreamers, mentors and coworkers.</p>
                         </div>
@@ -336,5 +327,6 @@
     </footer>
 </body>
 <script async src="./showcase-scroll.js"></script>
+<script src="./theme-toggle.js" defer></script>
 
 </html>
