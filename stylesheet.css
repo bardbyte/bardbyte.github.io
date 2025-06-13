@@ -1,29 +1,145 @@
 html {
+    /* Base Palette (Light Mode Defaults) */
     --accent-blue: #3338dd;
     --accent-green: #42a853;
     --accent-pink: #f3a3d5;
     --accent-orange: #ff542f;
     --accent-yellow: #f6be0c;
-    --background-primary: #ece7db;
-    --text-primary: #212125;
-    --main-light-grey: #aaa7ad;
+    --background-primary: #ece7db; /* Light beige */
+    --text-primary: #212125; /* Dark grey */
+    --neutral-white: #fff;
+    --neutral-light-grey: #aaa7ad; /* Was --main-light-grey */
+
+    /* Dark Mode Palette */
+    --dm-background-primary: #1f1f1f; /* Dark background for page/container */
+    --dm-text-primary: #f0f0f0; /* Light text for dark backgrounds */
+    --dm-tile-bg: #2c2c2c; /* Darker tiles on dark background */
+    --dm-accent-yellow: #f0b90b;
+    --dm-accent-orange: #e64a19;
+    --dm-accent-green: #66bb6a;
+    --dm-accent-blue: #5c6bc0;
+    --dm-scroll-indicator-bg: #424242;
+    --dm-scroll-indicator-text: #f0f0f0;
+    --dm-social-icon-svg-fill: #f0f0f0;
+
+    /* Semantic Theme Variables (Light Mode Initialization) */
+    --page-bg: var(--text-primary); /* body bg */
+    --page-text: var(--background-primary); /* body text, e.g., footer */
+    --container-bg: var(--background-primary);
+    --container-text: var(--text-primary);
+    --default-tile-bg: var(--neutral-white);
+    --default-tile-text: var(--text-primary); /* Inherits from container, but can be specific */
+
+    --header-tile-bg: var(--accent-yellow);
+    --header-tile-text: var(--text-primary);
+
+    --button-bg: var(--background-primary);
+    --button-text: var(--text-primary);
+    --button-hover-bg: var(--text-primary);
+    --button-hover-text: var(--background-primary);
+
+    --social-icon-bg: var(--accent-orange);
+    --social-icon-svg: var(--neutral-white);
+    --social-icon-hover-bg: var(--accent-blue);
+
+    --scroll-indicator-bg: var(--neutral-white);
+    --scroll-indicator-text: var(--text-primary);
+
+    --animated-text-accent: var(--accent-blue);
+
+    --skills-tag-bg: var(--accent-yellow);
+    --skills-tag-text: var(--text-primary);
+    --skills-tag-hover-bg: var(--accent-green);
+
+    --showcase-overall-bg: var(--neutral-white); /* The showcase component itself */
+    --showcase-border-color: var(--neutral-white);
+    --showcase-tile-bg: var(--text-primary); /* Project/testimonial tiles */
+    --showcase-tile-text: var(--background-primary);
+    --showcase-tag-bg: var(--accent-yellow);
+    --showcase-tag-text: var(--text-primary);
+    --showcase-tag-hover-bg: var(--accent-orange);
+
+    --special-yellow-bg: var(--accent-yellow); /* For .yellow class */
+    --special-yellow-text: var(--text-primary);
+
+    --section-showcase-start-bg: var(--accent-green); /* For #showcase-start */
+    --section-showcase-end-bg: var(--accent-yellow); /* For #showcase-end */
+
+    --link-text-decoration: currentColor; /* Or a specific color */
+    --general-link-color: inherit; /* Let it inherit by default */
+    --h1-em-color: var(--accent-orange);
+    --p-em-bg: var(--background-primary); /* For general highlighted text in paragraphs */
+    --p-em-text: var(--text-primary);
+    --img-tile-before-bg: var(--background-primary);
+
+
     --body-fonts: "Montserrat",system-ui,ui-sans-serif,sans-serif;
     font-family: var(--body-fonts);
     font-size: 3.2vmin;
-    -webkit-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%;
+}
+
+html.dark-mode {
+    --page-bg: var(--dm-background-primary);
+    --page-text: var(--dm-text-primary);
+    --container-bg: var(--dm-background-primary);
+    --container-text: var(--dm-text-primary);
+    --default-tile-bg: var(--dm-tile-bg);
+    /* --default-tile-text: var(--dm-text-primary); implicit */
+
+    --header-tile-bg: var(--dm-accent-yellow);
+    --header-tile-text: var(--text-primary); /* Dark text on light yellow might still be fine */
+
+    --button-bg: var(--dm-tile-bg); /* Button on container, so use tile bg */
+    --button-text: var(--dm-text-primary);
+    --button-hover-bg: var(--dm-text-primary);
+    --button-hover-text: var(--dm-tile-bg);
+
+    --social-icon-bg: var(--dm-accent-orange);
+    --social-icon-svg: var(--dm-social-icon-svg-fill);
+    --social-icon-hover-bg: var(--dm-accent-blue);
+
+    --scroll-indicator-bg: var(--dm-scroll-indicator-bg);
+    --scroll-indicator-text: var(--dm-scroll-indicator-text);
+
+    --animated-text-accent: var(--dm-accent-blue);
+
+    --skills-tag-bg: var(--dm-accent-yellow);
+    --skills-tag-text: var(--text-primary); /* Dark text on light yellow */
+    --skills-tag-hover-bg: var(--dm-accent-green);
+
+    --showcase-overall-bg: var(--dm-tile-bg);
+    --showcase-border-color: var(--dm-tile-bg);
+    --showcase-tile-bg: var(--dm-background-primary); /* Tiles on showcase component */
+    --showcase-tile-text: var(--dm-text-primary);
+    --showcase-tag-bg: var(--dm-accent-yellow);
+    --showcase-tag-text: var(--text-primary); /* Dark text on light yellow */
+    --showcase-tag-hover-bg: var(--dm-accent-orange);
+
+    --special-yellow-bg: var(--dm-accent-yellow);
+    --special-yellow-text: var(--text-primary); /* Dark text on light yellow */
+
+    --section-showcase-start-bg: var(--dm-accent-green);
+    --section-showcase-end-bg: var(--dm-accent-yellow);
+
+    --h1-em-color: var(--dm-accent-orange);
+    --p-em-bg: var(--dm-tile-bg);
+    --p-em-text: var(--dm-text-primary);
+    --img-tile-before-bg: var(--dm-background-primary);
 }
 
 body {
-    background-color: var(--text-primary);
-    color: var(--background-primary);
+
+    background-color: var(--page-bg);
+    color: var(--page-text);
     margin: 0
 }
 
 .container {
-    background-color: var(--background-primary);
+    background-color: var(--container-bg);
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    color: var(--text-primary);
+    color: var(--container-text);
     padding: .25rem
 }
 
@@ -34,7 +150,8 @@ body {
     height: 1000px;
     top: -999px;
     left: 0;
-    background-color: var(--background-primary);
+    background-color: var(--container-bg); /* Should match container bg */
+
     z-index: -10
 }
 
@@ -64,7 +181,8 @@ body {
 }
 
 .tile {
-    background-color: #fff;
+    background-color: var(--default-tile-bg);
+    color: var(--default-tile-text); /* Added for explicitness, though often inherited */
     border-radius: .75rem;
     padding: 2rem;
     position: relative
@@ -86,7 +204,8 @@ body {
 }
 
 .img-tile:before {
-    background-color: var(--background-primary);
+    background-color: var(--img-tile-before-bg);
+
     border-radius: 9999px;
     padding: 0 .3em
 }
@@ -116,7 +235,10 @@ header .tile {
     justify-content: center;
     padding: 1.25rem;
     padding-left: 2rem;
-    word-spacing: 100vw
+    word-spacing: 100vw;
+    /* This is the header "Saheb Singh" tile, already yellow by .yellow class */
+    /* background-color: var(--header-tile-bg); */
+    /* color: var(--header-tile-text); */
 }
 
 section {
@@ -146,7 +268,7 @@ h1 {
 }
 
 h1 em {
-    color: var(--accent-orange);
+    color: var(--h1-em-color);
     font-style: normal
 }
 
@@ -164,28 +286,30 @@ h3 {
 }
 
 a:any-link {
-    color: inherit;
+    color: var(--general-link-color);
     text-decoration: underline;
-    text-decoration-style: dotted
+    text-decoration-style: dotted;
+    /* text-decoration-color: var(--link-text-decoration-color); */ /* Causing issues, use simpler for now */
 }
 
 a:hover {
     text-decoration-style: solid
 }
 
-p em {
-    background-color: var(--background-primary);
+p em { /* General em tags in paragraphs */
+    background-color: var(--p-em-bg);
     border-radius: 9999px;
-    color: var(--text-primary);
+    color: var(--p-em-text);
     font-style: normal;
     padding: 0 .3em
 }
 
 button {
-    background-color: var(--background-primary);
+
+    background-color: var(--button-bg);
     border: 0;
     border-radius: 9999px;
-    color: var(--text-primary);
+    color: var(--button-text);
     font-family: var(--body-fonts);
     font-size: 1.25rem;
     font-weight: 400;
@@ -197,16 +321,19 @@ button {
 }
 
 button:hover {
-    background-color: var(--text-primary);
-    color: var(--background-primary)
+
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text)
+
 }
 
 button:after {
     content: " \002192"
 }
 
-.yellow {
-    background-color: var(--accent-yellow)
+.yellow { /* Used for header tile and showcase-end */
+    background-color: var(--special-yellow-bg) !important; /* Important to override other tile bgs */
+    color: var(--special-yellow-text) !important;
 }
 
 .larger {
@@ -231,7 +358,7 @@ button:after {
 
 .social-icon {
     align-items: center;
-    background-color: var(--accent-orange);
+    background-color: var(--social-icon-bg);
     border-radius: 9999px;
     display: flex;
     flex-grow: 0;
@@ -244,10 +371,11 @@ button:after {
 .social-icon svg {
     height: 24px;
     width: 24px;
+    fill: var(--social-icon-svg);
 }
 
 .social-icon:hover {
-    background-color: var(--accent-blue)
+    background-color: var(--social-icon-hover-bg);
 }
 
 .stamp {
@@ -262,8 +390,8 @@ button:after {
 }
 
 .showcase {
-    background-color: #fff;
-    border: .25rem solid #fff;
+    background-color: var(--showcase-overall-bg);
+    border: .25rem solid var(--showcase-border-color);
     border-radius: .75rem;
     overflow-x: auto;
     overflow-y: hidden;
@@ -300,7 +428,8 @@ button:after {
     flex-direction: column;
     justify-content: flex-start;
     padding: 1.5rem;
-    background-color: var(--text-primary);
+    background-color: var(--showcase-tile-bg);
+    /* color: var(--showcase-tile-text); Inherited */
     border-radius: 0.75rem;
     margin-bottom: 1rem;
     min-height: 350px; /* Ensures a consistent height for all cards */
@@ -314,12 +443,13 @@ button:after {
 .showcase .tile h3 {
     margin-bottom: 1rem;
     font-size: 1.5rem;
-    color: var(--background-primary);
+    color: var(--showcase-tile-text); /* Explicitly set for showcase tiles */
+
 }
 .showcase .tile p {
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--background-primary);
+    color: var(--showcase-tile-text); /* Explicitly set for showcase tiles */
     margin: 0.5rem 0;
     flex-grow: 1; /* Allows the text to occupy the available space */
 }
@@ -328,9 +458,9 @@ button:after {
     padding-top: 0
 } */
 /* Adjust the tag styling for consistency and readability */
-.showcase .tile p em {
-    background-color: var(--accent-yellow);
-    color: var(--text-primary);
+.showcase .tile p em { /* Tags inside showcase tiles */
+    background-color: var(--showcase-tag-bg);
+    color: var(--showcase-tag-text);
     border-radius: 0.5rem;
     padding: 0.2rem 0.6rem;
     font-size: 0.875rem; /* Slightly smaller font size for tags */
@@ -341,7 +471,7 @@ button:after {
 }
 
 .showcase .tile p em:hover {
-    background-color: var(--accent-orange); /* Adds a hover effect to the tags */
+    background-color: var(--showcase-tag-hover-bg); /* Adds a hover effect to the tags */
 }
 
 /* Additional adjustments for responsiveness */
@@ -359,17 +489,20 @@ button:after {
         padding: 0.2rem 0.5rem;
     }
 }
-#showcase-start {
-    background-color: var(--accent-green)
+#showcase-start { /* Specific tile styling */
+    background-color: var(--section-showcase-start-bg) !important; /* Important to override general showcase tile */
+    color: var(--showcase-tile-text); /* Assuming text color should be consistent with other special tiles */
 }
 
-#showcase-end {
-    background-color: var(--accent-yellow)
+#showcase-end { /* Specific tile styling, uses .yellow by default now */
+    /* background-color: var(--section-showcase-end-bg); */
+    /* color: var(--showcase-tile-text); */
 }
 
 .scroll-indicator {
     --indicator-size: 2rem;
-    background-color: #fff;
+    background-color: var(--scroll-indicator-bg);
+    color: var(--scroll-indicator-text);
     cursor: pointer;
     font-size: calc(var(--indicator-size) * 1.4);
     height: calc(var(--indicator-size) * 2);
@@ -402,7 +535,7 @@ button:after {
 
 .animated-text:after {
     animation: replaceWords 8s linear infinite;
-    color: var(--accent-blue);
+    color: var(--animated-text-accent);
     content: "software.";
     font-weight: 700
 }
@@ -530,7 +663,8 @@ button:after {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     font-size: 1.25rem;
-    color: var(--text-primary);
+
+    color: var(--container-text); /* Should match the text color of the container it's in */
     font-weight: 200; /* Bold for headers */
 }
 
@@ -542,9 +676,11 @@ button:after {
 }
 
 .skills-tags em {
-    background-color: var(--accent-yellow);
+    background-color: var(--skills-tag-bg);
     border-radius: 20px;
-    color: var(--text-primary);
+
+    color: var(--skills-tag-text);
+
     padding: 0.25rem 0.75rem;
     font-style: normal;
     font-weight: 600;
@@ -552,6 +688,81 @@ button:after {
 }
 
 .skills-tags em:hover {
-    background-color: var(--accent-green);
+    background-color: var(--skills-tag-hover-bg);
+}
+
+/* Theme Toggle Switch styles */
+.theme-switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem; /* Consistent with social icons */
+    /* background-color: var(--social-icon-bg); /* Optional: if it should look like other buttons */
+    /* border-radius: 9999px; */ /* Optional */
+    min-width: auto; /* To not stretch like the name tile */
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    cursor: pointer;
+}
+
+.theme-switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--text-primary); /* Dark grey in light, light grey in dark */
+    border-radius: 34px;
+    transition: .4s;
+}
+
+.slider .icon {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    transition: .4s;
+    top: 4px;
+    background-color: var(--background-primary); /* Beige in light, dark grey in dark */
+}
+
+.slider .sun {
+    left: 4px;
+    opacity: 1;
+    /* background-image: url('sun-icon.svg'); /* Optional: if using SVG */
+}
+
+.slider .moon {
+    right: 4px; /* Initial position before check */
+    opacity: 0;
+    transform: translateX(26px); /* Start off-screen to the right of where it will end up */
+    /* background-image: url('moon-icon.svg'); /* Optional: if using SVG */
+}
+
+/* Toggle animation when input is checked (dark mode active) */
+.theme-switch input:checked + .slider {
+    background-color: var(--accent-blue); /* Or a specific dark mode toggle track color */
+}
+
+.theme-switch input:checked + .slider .sun {
+    transform: translateX(26px);
+    opacity: 0;
+}
+
+.theme-switch input:checked + .slider .moon {
+    transform: translateX(0px); /* Slides into view from its initial offset */
+    opacity: 1;
 }
 

@@ -32,6 +32,15 @@
                 aria-label="LinkedIn link">
                 <img src="./assets/linkedin.svg" alt="linkedin logo">
             </a>
+            <div class="theme-switch-container" role="group" aria-label="Theme toggle">
+                <label class="theme-switch" for="theme-checkbox-input" aria-label="Switch to dark or light theme">
+                    <input type="checkbox" id="theme-checkbox-input" />
+                    <div class="slider">
+                        <div class="icon sun"></div>
+                        <div class="icon moon"></div>
+                    </div>
+                </label>
+            </div>
         </header>
 
         <main id="main" role="main" class="flex flex-columns">
@@ -318,5 +327,6 @@
     </footer>
 </body>
 <script async src="./showcase-scroll.js"></script>
+<script src="./theme-toggle.js" defer></script>
 
 </html>
