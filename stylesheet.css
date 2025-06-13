@@ -129,6 +129,7 @@ html.dark-mode {
 }
 
 body {
+
     background-color: var(--page-bg);
     color: var(--page-text);
     margin: 0
@@ -150,6 +151,7 @@ body {
     top: -999px;
     left: 0;
     background-color: var(--container-bg); /* Should match container bg */
+
     z-index: -10
 }
 
@@ -203,6 +205,7 @@ body {
 
 .img-tile:before {
     background-color: var(--img-tile-before-bg);
+
     border-radius: 9999px;
     padding: 0 .3em
 }
@@ -302,6 +305,7 @@ p em { /* General em tags in paragraphs */
 }
 
 button {
+
     background-color: var(--button-bg);
     border: 0;
     border-radius: 9999px;
@@ -317,8 +321,10 @@ button {
 }
 
 button:hover {
+
     background-color: var(--button-hover-bg);
     color: var(--button-hover-text)
+
 }
 
 button:after {
@@ -438,6 +444,7 @@ button:after {
     margin-bottom: 1rem;
     font-size: 1.5rem;
     color: var(--showcase-tile-text); /* Explicitly set for showcase tiles */
+
 }
 .showcase .tile p {
     font-size: 1rem;
@@ -656,6 +663,7 @@ button:after {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     font-size: 1.25rem;
+
     color: var(--container-text); /* Should match the text color of the container it's in */
     font-weight: 200; /* Bold for headers */
 }
@@ -670,7 +678,9 @@ button:after {
 .skills-tags em {
     background-color: var(--skills-tag-bg);
     border-radius: 20px;
+
     color: var(--skills-tag-text);
+
     padding: 0.25rem 0.75rem;
     font-style: normal;
     font-weight: 600;
