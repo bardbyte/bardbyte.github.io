@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notes · bardbyte</title>
+    <meta name="description" content="Short, dated learnings from Saheb Singh (bardbyte) — TIL-style notes on AI agents, data, and building.">
+    <link rel="canonical" href="https://bardbyte.github.io/notes/">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../style.css">
+    <script>(function () { var t = localStorage.getItem('theme'); if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark'); })();</script>
+</head>
+
+<body>
+    <div class="page">
+        <header class="site-header">
+            <a class="wordmark" href="../">bardbyte</a>
+            <nav class="site-nav" aria-label="Site">
+                <a href="../writing/">writing</a>
+                <a href="./" aria-current="page">notes</a>
+                <a href="../bets/">bets</a>
+                <a href="../projects/">projects</a>
+                <a href="../now/">now</a>
+                <a href="../about/">about</a>
+                <button id="theme-toggle" type="button" aria-label="Switch theme">☾</button>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Notes</h1>
+            <p class="meta">Small things I learned, dated, newest first. The quality bar here is
+                deliberately low — that's what makes it sustainable. The considered stuff lives in
+                <a href="../writing/">writing</a>.</p>
+
+            <hr>
+
+            <section class="note">
+                <p class="kicker">July 2026</p>
+                <h2>Serving a knowledge graph to agents over MCP</h2>
+                <p>For <a href="https://github.com/bardbyte/wyla">wyla</a> I needed agents to
+                    query a provenance-typed knowledge graph without handing them database
+                    credentials. MCP turned out to be the right seam: the graph exposes a small
+                    set of tools (search entities, expand relationships, compile a metric query),
+                    and any MCP-speaking runtime — Claude, or an agent built on Google's ADK —
+                    can discover them without custom integration.</p>
+                <p>The lesson that stuck: <strong>design the tool surface around questions, not
+                    tables.</strong> My first version exposed CRUD-ish graph operations and
+                    agents flailed. The second version exposed five verbs an analyst would
+                    recognize, and suddenly the same models looked smart. The intelligence was in
+                    the interface.</p>
+            </section>
+
+            <section class="note">
+                <p class="kicker">July 2026</p>
+                <h2>Watching agents work in parallel changes how you delegate</h2>
+                <p>I built <a href="https://github.com/bardbyte/ClaudeWatch">ClaudeWatch</a>, a
+                    small macOS app that monitors and dispatches multiple Claude Code sessions,
+                    because I kept losing track of which terminal was doing what. The surprise
+                    wasn't the tooling — it was behavioral. Once I could <em>see</em> all
+                    sessions at a glance, I started scoping tasks smaller and more independently,
+                    the way you would for a team. Observability didn't just monitor the work; it
+                    restructured it.</p>
+            </section>
+
+            <section class="note">
+                <p class="kicker">July 2026</p>
+                <h2>Most agent frameworks are 90% ceremony</h2>
+                <p>After building agents with several frameworks, I wrote
+                    <a href="https://github.com/bardbyte/liteagent">liteagent</a> to test a
+                    hunch: the useful core of an "agent" is a loop, a tool registry, and a
+                    termination condition — three lines of intent buried under thirty of
+                    boilerplate. Rebuilding the minimum yourself once is the fastest way to
+                    evaluate every framework afterward: you can finally see which abstractions
+                    pay rent.</p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <span>Saheb Singh</span>
+            <a href="https://github.com/bardbyte">GitHub</a>
+            <a href="https://linkedin.com/in/ssg">LinkedIn</a>
+            <a href="mailto:sahebsinghgandh@gmail.com">Email</a>
+        </footer>
+    </div>
+    <script src="../theme-toggle.js" defer></script>
+</body>
+
+</html>

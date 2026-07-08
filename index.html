@@ -1,332 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
-    <title>Saheb Singh Gandh | Full-Stack Engineer | AI & Cloud Expert | Startup Advisor</title>
-    <link rel="icon" type="image/png" href="./assets/favicon.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bardbyte · Saheb Singh</title>
     <meta name="description"
-        content="Saheb Singh Gandh: Full-Stack Engineer with expertise in AI, Cloud Architecture, and Scalable Solutions. Google Engineer and Startup Advisor with a passion for solving complex challenges and driving innovation.">
-    <meta name="keywords"
-        content="Full-Stack Engineer, AI, Cloud Architecture, Google Engineer, Startup Advisor, Scalable Solutions, Search Algorithms, Metadata Clustering, Tech Consultant, Carnegie Mellon">
-    <link rel="canonical" href="https://sahebsinghgandh.com">
-    <meta property="og:title" content="Saheb Singh Gandh | Full-Stack Engineer | AI & Cloud Expert | Startup Advisor">
+        content="Saheb Singh (bardbyte). I build knowledge systems — semantic layers and knowledge graphs that make enterprise data legible to humans and AI agents. Essays, notes, and bets.">
+    <link rel="canonical" href="https://bardbyte.github.io/">
+    <meta property="og:title" content="bardbyte · Saheb Singh">
     <meta property="og:description"
-        content="Saheb Singh Gandh: Full-Stack Engineer with expertise in AI, Cloud Architecture, and Scalable Solutions. Google Engineer and Startup Advisor with a passion for solving complex challenges and driving innovation.">
-    <meta property="og:url" content="https://sahebsinghgandh.com">
-    <meta property="og:image" content="https://sahebsinghgandh.com/assets/header-preview.png">
+        content="Essays, notes, and bets from an engineer building knowledge systems for humans and AI agents.">
+    <meta property="og:url" content="https://bardbyte.github.io/">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Saheb Singh Gandh | Full-Stack Engineer">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="stylesheet" href="./style.css">
+    <script>(function () { var t = localStorage.getItem('theme'); if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark'); })();</script>
 </head>
 
 <body>
-    <div class="container">
-        <header class="header" role="banner">
-            <div class="tile yellow">Saheb Singh</div>
-            <a role="link" href="https://github.com/bardbyte" class="social-icon" aria-label="GitHub link">
-                <img src="./assets/github.svg" alt="GitHub logo">
-            </a>
-            <a role="link" href="https://linkedin.com/in/ssg" class="social-icon"
-                aria-label="LinkedIn link">
-                <img src="./assets/linkedin.svg" alt="linkedin logo">
-            </a>
-            <div class="theme-switch-container" role="group" aria-label="Theme toggle">
-                <label class="theme-switch" for="theme-checkbox-input" aria-label="Switch to dark or light theme">
-                    <input type="checkbox" id="theme-checkbox-input" />
-                    <div class="slider">
-                        <div class="icon sun"></div>
-                        <div class="icon moon"></div>
-                    </div>
-                </label>
-            </div>
+    <div class="page">
+        <header class="site-header">
+            <a class="wordmark" href="./">bardbyte</a>
+            <nav class="site-nav" aria-label="Site">
+                <a href="./writing/">writing</a>
+                <a href="./notes/">notes</a>
+                <a href="./bets/">bets</a>
+                <a href="./projects/">projects</a>
+                <a href="./now/">now</a>
+                <a href="./about/">about</a>
+                <button id="theme-toggle" type="button" aria-label="Switch theme">☾</button>
+            </nav>
         </header>
 
-        <main id="main" role="main" class="flex flex-columns">
-            <section id="section-hero" class="flex flex-variable">
-                <div class="tile yellow">
-                    <h1>Hey, I'm a human, I learn, and I make mistakes and I build stuff that matters.</h1>
-                    <p class="hidden">Full-stack engineer turning complex challenges into efficient solutions.</p>
-                    <p aria-hidden="true"><span class="animated-text"></span></p>
+        <main>
+            <h1>I teach data to explain itself.</h1>
 
-                    <div class="padded-top">
-                        <p class="larger">Computer Engineer | AI Startup Advisor | Podcaster | Hacker </p>
-                        <p>I'm not just about writing code. I'm about understanding the why behind tech problems and
-                            crafting solutions that make a real difference. Whether it's optimizing search algorithms at
-                            Google or helping startups scale, I'm all in.</p>
-                        <a href="mailto:sahebsinghgandh@gmail.com" aria-labelledby="contact-button"><button
-                                id="contact-button">Let's build something cool</button></a>
-                    </div>
-                </div>
-                <div id="header-img" role="img" class="tile yellow img-tile"
-                    aria-label="Saheb at his workspace, surrounded by screens showing code and project diagrams">
-                    <img src="./assets/header.webp" alt="Saheb at work">
-                </div>
-            </section>
+            <p>I'm Saheb Singh — <em>bardbyte</em> on most of the internet. I build knowledge
+                systems: right now that means leading knowledge-graph and semantic-layer work at
+                American Express, making an enterprise's data warehouse legible not just to
+                humans, but to AI agents. Before that I spent five years at Google, mostly on
+                Search and Books.</p>
 
-            <section id="section-about" class="flex flex-columns">
-                <div class="tile">
-                    <h2 class="padded-top">What I'm About</h2>
-                </div>
-                <div class="flex flex-variable-reversed">
-                    <div class="tile padded-top">
-                        <p class="larger">I’m a problem solver at heart, always looking for that elegant solution that
-                            makes everything click.</p>
-                        <p>My journey in tech began on the bustling streets of Mumbai, where I first started coding to
-                            solve everyday problems. Fast forward to Google, working on search
-                            algorithms that touch billions of lives. It’s surreal to think that something I worked on
-                            helps someone find what they need faster, all over the world.</p>
-                        <p>But what drives me isn’t just the scale or the technology—it’s the impact. When a project
-                            like revamping Google Books' partner selection saves $800K annually, that’s real change.
-                            It’s about creating solutions that don’t just work—they matter.</p>
-                        <p>Outside of Google, I channel this passion into the startup ecosystem, helping fledgling
-                            companies build tech that’s not only innovative but scalable. It's a thrill to see a startup
-                            grow and know you played a part in that success.</p>
-                        <p>My time at Carnegie Mellon was a game-changer. It was intense, sure, but it equipped me with
-                            the skills to tackle any challenge thrown my way. Whether it's optimizing a search engine or
-                            mentoring a team, I’m all in.</p>
-                    </div>
-                    <div id="about-img" role="img" class="tile img-tile align-bottom"
-                        aria-label="Visual representation of Saheb's diverse skill set">
-                        <div id="about-skills" class=" smaller  skills-tags">
-                            <!-- Technical Skills -->
-                            <h3>Technical Skills</h3>
-                            <p><em>Python</em> <em>C++</em> <em>Java</em> <em>TypeScript</em> <em>SQL</em> <em>Rust
-                                    (learning)</em></p>
+            <p>This site is my working notebook, not a portfolio. Three lanes:</p>
 
-                            <!-- Machine Learning -->
-                            <h3>Machine Learning</h3>
-                            <p><em>TensorFlow</em> <em>Keras</em> <em>Scikit-learn</em> <em>PyTorch</em> <em>Hugging
-                                    Face</em> <em>Langchain</em></p>
+            <ul>
+                <li><a href="./writing/">Writing</a> — essays I'd defend in two years.</li>
+                <li><a href="./notes/">Notes</a> — small, dated things I learned this week.</li>
+                <li><a href="./bets/">Bets</a> — where I think value is going, held loosely and
+                    revised in public.</li>
+            </ul>
 
-                            <!-- Data Analytics -->
-                            <h3>Big Data & Analytics</h3>
-                            <p><em>BigQuery</em> <em>Tableau</em> <em>Excel</em> <em>Pandas</em> <em>NumPy</em>
-                                <em>Apache Kafka</em> <em>Apache Beam</em>
-                            </p>
+            <p>If you want the story — Mumbai to Carnegie Mellon to Google to Amex — it's on the
+                <a href="./about/">about</a> page. What I'm doing this quarter is on
+                <a href="./now/">now</a>.</p>
 
-                            <!-- Cloud & DevOps -->
-                            <h3>Cloud & DevOps</h3>
-                            <p><em>GCP</em> <em>AWS</em> <em>Kubernetes</em> <em>Docker</em> <em>Git</em></p>
-
-                            <!-- Web Technologies -->
-                            <h3>Web Technologies</h3>
-                            <p><em>React.js</em> <em>Next.js</em> <em>Node.js</em> <em>Express.js</em> <em>RESTful
-                                    APIs</em> <em>GraphQL</em></p>
-
-                            <!-- Databases -->
-                            <h3>Databases</h3>
-                            <p><em>PostgreSQL</em> <em>Prisma ORM</em></p>
-
-                            <!-- Certifications -->
-                            <h3>Certifications</h3>
-                            <p><em>Professional Scrum Master I (PSM I)</em></p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
-            <section id="section-showcase">
-                <div id="showcase" class="flex showcase">
-                    <div id="showcase-start" class="tile">
-                        <h2>Project Portfolio</h2>
-                        <div>
-                            <img id="showcase-img" src="./assets/showcase.svg" alt="Project showcase" loading="lazy">
-                            <p>Innovative solutions driving technological advancement and business growth.</p>
-                        </div>
-                    </div>
-            
-                    <div class="tile">
-                        <h3>Google Search Metadata Clustering</h3>
-                        <div>
-                            <p>At the core of Google Search, where milliseconds matter, I engineered a metadata clustering solution that not only sped up processes by 86% but also enhanced accuracy, improving search quality for billions of users.</p>
-                            <p><span class="hidden">Tags: </span><em>Distributed Systems</em> <em>Machine Learning</em> <em>Big Data</em></p>
-                        </div>
-                    </div>
-            
-                    <div class="tile">
-                        <h3>AI Marketplace Search Implementation</h3>
-                        <div>
-                            <p>Transforming how users interact with AI tools, I implemented a sophisticated search engine that goes beyond basic keyword matching, enabling seamless discovery of AI resources and driving user engagement.</p>
-                            <p><span class="hidden">Tags: </span><em>Information Retrieval</em> <em>AI</em> <em>Search Algorithms</em></p>
-                        </div>
-                    </div>
-            
-                    <div class="tile">
-                        <h3>Google Books Partner Selection Algorithm</h3>
-                        <div>
-                            <p>Optimizing partner selection in the vast library of Google Books, I saved the company $800K annually while fostering stronger, more strategic partnerships.</p>
-                            <p><span class="hidden">Tags: </span><em>AI</em> <em>Business Intelligence</em> <em>Optimization</em></p>
-                        </div>
-                    </div>
-            
-                    <div class="tile">
-                        <h3>Copyright Status Monitoring Dashboard</h3>
-                        <div>
-                            <p>In a digital world where compliance is key, I developed a monitoring dashboard that slashed copyright non-compliance by 30%, streamlining complex legal workflows.</p>
-                            <p><span class="hidden">Tags: </span><em>Real-time Systems</em> <em>Data Analytics</em> <em>Risk Management</em></p>
-                        </div>
-                    </div>
-            
-                    <div class="tile">
-                        <h3>Troubleshooting Guide Search Tool</h3>
-                        <div>
-                            <p>By designing a cloud-native troubleshooting platform, I cut down critical response times, making the publishing process faster and more efficient for our partners.</p>
-                            <p><span class="hidden">Tags: </span><em>Cloud Architecture</em> <em>Microservices</em> <em>DevOps</em></p>
-                        </div>
-                    </div>
-            
-                    <div class="tile">
-                        <h3>Forecasting-related Case Volume Reduction</h3>
-                        <div>
-                            <p>Through advanced predictive analytics, I reduced forecasting-related issues by 90%, ensuring that our systems operate smoothly and efficiently.</p>
-                            <p><span class="hidden">Tags: </span><em>Predictive Analytics</em> <em>Machine Learning</em> <em>Data Science</em></p>
-                        </div>
-                    </div>
-            
-                    <div class="tile">
-                        <h3>Pill Mill Detector (Opioid Crisis Detector)</h3>
-                        <div>
-                            <p>In the fight against the opioid crisis, I developed an AI-driven detector that identified potential pill mill operations with 88% accuracy, contributing to a safer healthcare environment.</p>
-                            <p><span class="hidden">Tags: </span><em>AI</em> <em>Healthcare</em> <em>Predictive Modeling</em></p>
-                        </div>
-                    </div>
-            
-                    <div class="tile">
-                        <h3>Zoning Laws Information System for LA Architects</h3>
-                        <div>
-                            <p>Navigating complex zoning laws, I streamlined the ADU development process for architects in LA, turning red tape into clear pathways for urban development.</p>
-                            <p><span class="hidden">Tags: </span><em>Urban Development</em> <em>Data Systems</em> <em>Architecture</em></p>
-                        </div>
-                    </div>
-            
-                    <div class="tile">
-                        <h3>Virtual Personal Yoga Trainer</h3>
-                        <div>
-                            <p>Blending AI with wellness, I created a virtual personal yoga trainer that understands and adapts to users' needs with 93% accuracy, making personalized fitness accessible.</p>
-                            <p><span class="hidden">Tags: </span><em>AI</em> <em>Wellness</em> <em>Machine Learning</em></p>
-                        </div>
-                    </div>
-            
-                    <div id="showcase-end" class="tile">
-                        <h3>Explore Further</h3>
-                        <div>
-                            <a href="https://linkedin.com/in/ssg" aria-labelledby="linkedin-button"><button id="linkedin-button">Connect on LinkedIn</button></a>
-                            <a href="https://github.com/bardbyte" aria-labelledby="github-button"><button id="github-button">Review Code on GitHub</button></a>
-                            <a href="./assets/saheb_resume.pdf" aria-labelledby="cv-button"><button id="cv-button">Download Detailed CV</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll-indicator indicator-left" aria-label="scroll indicator" onclick="scrollElementLeft('showcase')">&lsaquo;</div>
-                <div class="scroll-indicator indicator-right" aria-label="scroll indicator" onclick="scrollElementRight('showcase')">&rsaquo;</div>
-            </section>
-            
-
-            <section id="section-testimonials">
-                <div id="showcase" class="flex showcase">
-                    <div id="showcase-start" class="tile">
-                        <h2>Cool People I've Worked With</h2>
-                        <div>
-                            <img id="testimonials-placeholder-img" src="/api/placeholder/300/200" alt="Placeholder image for testimonials section"
-                                aria-hidden="true" loading="lazy">
-                            <p>These are dreamers, mentors and coworkers.</p>
-                        </div>
-                    </div>
-                    <div class="tile">
-                        <div>
-                            <img src="./assets/testimonials/jess.webp" alt="Testimonial 1 avatar"
-                                class="testimonial-avatar ">
-                            <p>"I met Saheb through our coursework at Stanford. His regular and generous consultation on
-                                my new start-up helped me accelerate my development with a stronger product. Saheb has
-                                the rare quality of being amazing in technical skills while also being intuitive in the
-                                user experience and at the same time being knowledgeable about the competitive landscape
-                                of emerging tech. Saheb has it all! If you have the opportunity to work with Saheb -
-                                grab it!"</p>
-                            <p class="testimonial-author">- Jessica Reid, CEO at ididitwithai</p>
-                        </div>
-                    </div>
-                    <div class="tile">
-                        <div>
-                            <img src="./assets/testimonials/darcy.webp" alt="Testimonial 2 avatar"
-                                class="testimonial-avatar ">
-                            <p>"Working with Saheb means you're always learning. He has this knack for making complex
-                                stuff seem simple. A real asset to any team."</p>
-                            <p class="testimonial-author">- Darcy Dapra, Head of Digitization at Google</p>
-                        </div>
-                    </div>
-                    <div class="tile">
-                        <div>
-                            <img src="./assets/testimonials/hemin.webp" alt="Testimonial 3 avatar"
-                                class="testimonial-avatar ">
-                            <p>"I have known Saheb for two years while working at GST Edge as an intern and then as a
-                                Team Lead. In a relatively short period of time, he has managed to become one of the
-                                most capable leaders. He has grown to be a very industrious member of the team, who
-                                constantly strives on improving the process. His performance has consistently exceeded
-                                expectations. There remains no doubt about his dedication, hard work and innovative
-                                ideas as he has been stated as a ‘thinking leader’ by one of his most challenging
-                                clients. Saheb is constantly faced with situations that are unique for the position that
-                                he handles. The admirable part remains that he has never had an escalation against his
-                                name and delivers par expectations. While launching one of the projects, the marketing
-                                team demanded a new set of UX to be implemented across project. Understanding the need
-                                of the hour, he put extra efforts. Apart from his designated profile, he is actively
-                                involved in people engagement and collaboration."</p>
-                            <p class="testimonial-author">- Hemin Joshi, Staff Software Engineer at Amazon</p>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- <div class="scroll-indicator indicator-left" aria-label="scroll indicator" onclick="scrollElementLeft('showcase')">&lsaquo;</div>
-    <div class="scroll-indicator indicator-right" aria-label="scroll indicator" onclick="scrollElementRight('showcase')">&rsaquo;</div> -->
-            </section>
-
-
-
-
-            <section id="section-collab" class="flex flex-columns">
-                <div class="tile flex flex-columns flex-edges">
-                    <div>
-                        <h2 class="padded-top">Got a Challenge?</h2>
-                    </div>
-                    <div class="stamp" aria-hidden="true"></div>
-                </div>
-                <div class="flex flex-variable-reversed">
-                    <div id="collab-img" role="img" class="tile img-tile smaller align-bottom"
-                        aria-label="Saheb pitching his idea to investors and getting feedback">
-                        <img src="./assets/footer.webp" alt="Saheb pitched a project">
-                    </div>
-                    <div class="tile padded-top">
-                        <p class="larger">I'm always up for tackling interesting problems.</p>
-                        <p>Whether you're a big corp looking to optimize, a startup ready to scale, or somewhere in
-                            between, I'm game. My sweet spots:</p>
-                        <ul>
-                            <li>Building systems that can handle serious load</li>
-                            <li>Making search work like it should</li>
-                            <li>Getting your head around cloud architecture</li>
-                            <li>Applying AI to stuff that matters</li>
-                            <li>Mentoring teams to level up their game</li>
-                        </ul>
-                        <p>If you've got a tech challenge that needs some fresh eyes, hit me up. Let's see if we can
-                            create something awesome together.</p>
-                        <p>Shoot me an <a href="mailto:sahebsinghgandh@gmail.com">email</a> or connect on <a
-                                href="https://linkedin.com/in/ssg">LinkedIn</a>. Always happy to chat tech.</p>
-                    </div>
-                </div>
-            </section>
+            <h2>Recent</h2>
+            <ul class="post-list">
+                <li>
+                    <span class="date">Jul 2026</span>
+                    <span><a href="./writing/semantic-layer-for-agents.html">A semantic layer your agents can actually use</a>
+                        <span class="status-tag">draft</span></span>
+                </li>
+                <li>
+                    <span class="date">Jul 2026</span>
+                    <span><a href="./notes/">Notes: serving a knowledge graph over MCP; watching agents work in parallel</a></span>
+                </li>
+            </ul>
         </main>
-    </div>
 
-    <footer id="footer" role="contentinfo">
-        <p class="larger">Thanks for stopping by!</p>
-        <p>Built this site myself. Clean HTML, CSS, and a dash of JS. Because good tech should be simple and accessible.
-        </p>
-        <p>Saheb Singh Gandh &copy; 2024</p>
-        <div id="logo" aria-hidden="true"></div>
-    </footer>
+        <footer class="site-footer">
+            <span>Saheb Singh · San Francisco Bay Area</span>
+            <a href="https://github.com/bardbyte">GitHub</a>
+            <a href="https://linkedin.com/in/ssg">LinkedIn</a>
+            <a href="mailto:sahebsinghgandh@gmail.com">Email</a>
+        </footer>
+    </div>
+    <script src="./theme-toggle.js" defer></script>
 </body>
-<script async src="./showcase-scroll.js"></script>
-<script src="./theme-toggle.js" defer></script>
 
 </html>

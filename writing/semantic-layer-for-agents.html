@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A semantic layer your agents can actually use · bardbyte</title>
+    <meta name="description"
+        content="Text-to-SQL demos fail in the enterprise because the warehouse has no meaning attached. What I've learned building knowledge graphs and semantic layers that AI agents can query safely.">
+    <link rel="canonical" href="https://bardbyte.github.io/writing/semantic-layer-for-agents.html">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../style.css">
+    <script>(function () { var t = localStorage.getItem('theme'); if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark'); })();</script>
+</head>
+
+<body>
+    <div class="page">
+        <header class="site-header">
+            <a class="wordmark" href="../">bardbyte</a>
+            <nav class="site-nav" aria-label="Site">
+                <a href="./" aria-current="page">writing</a>
+                <a href="../notes/">notes</a>
+                <a href="../bets/">bets</a>
+                <a href="../projects/">projects</a>
+                <a href="../now/">now</a>
+                <a href="../about/">about</a>
+                <button id="theme-toggle" type="button" aria-label="Switch theme">☾</button>
+            </nav>
+        </header>
+
+        <main>
+            <article>
+                <div class="title-block">
+                    <h1>A semantic layer your agents can actually use</h1>
+                    <p class="meta">July 2026 · <span class="status-tag">draft</span> — working
+                        notes; the argument is stable, the prose isn't.</p>
+                </div>
+
+                <p>Every text-to-SQL demo works. Almost none of them survive contact with a real
+                    enterprise warehouse. The gap isn't the model — it's that the warehouse
+                    doesn't mean anything.</p>
+
+                <p>A table called <code>txn_f_v3</code> with 400 columns is perfectly legible to
+                    the five analysts who have been burned by it before. They know that
+                    <code>amount</code> is in cents before 2021 and dollars after, that
+                    <code>status = 7</code> means "settled but disputed," and that the join to
+                    the customer dimension silently drops records from one acquisition. None of
+                    that knowledge is <em>in</em> the warehouse. It's in Slack threads, in old
+                    dashboards, and in people's heads. An agent pointed at the raw schema doesn't
+                    have access to any of it — so it writes confident, syntactically perfect,
+                    wrong SQL.</p>
+
+                <p>I spend my days on this problem. At American Express I lead knowledge-graph and
+                    semantic-layer work on Lumi, the enterprise data warehouse (it runs on
+                    BigQuery). Nights and weekends I've been building
+                    <a href="https://github.com/bardbyte/wyla">wyla</a>, an open proof-of-concept
+                    of the same idea with none of the enterprise constraints. Both projects have
+                    pushed me to the same conclusion:</p>
+
+                <blockquote>
+                    <p>The unit of progress isn't a better model or a better prompt. It's turning
+                        tribal knowledge about data into a queryable artifact — a semantic layer —
+                        and serving it to agents as a first-class interface.</p>
+                </blockquote>
+
+                <h2>What "semantic layer for agents" actually means</h2>
+
+                <p>Three properties, in increasing order of difficulty:</p>
+
+                <ol>
+                    <li><strong>Definitions live in one place.</strong> Metrics, dimensions, and
+                        join paths are declared once (LookML, dbt metrics, a graph — the syntax
+                        matters less than the discipline) instead of re-derived in every query.
+                        Humans have wanted this for twenty years; agents make it non-negotiable,
+                        because an agent will happily invent a definition if you don't hand it
+                        one.</li>
+                    <li><strong>Provenance is typed, not vibes.</strong> When the layer answers
+                        "monthly active customers," it should also answer <em>where that number
+                        comes from</em> — which source system, which transformation, how fresh,
+                        how trusted. In wyla every node in the graph carries provenance as part
+                        of its type. This is what lets a downstream agent (or auditor) decide how
+                        much to believe.</li>
+                    <li><strong>The interface is an agent protocol, not a BI tool.</strong> I
+                        serve the graph over MCP so any agent runtime can discover and query it
+                        as tools, with guardrails at the boundary: the agent gets a sandboxed
+                        analyst environment and governed query surface, not warehouse
+                        credentials. "Read-only access to meaning" is a much safer contract than
+                        "read-only access to tables."</li>
+                </ol>
+
+                <h2>What surprised me</h2>
+
+                <p><strong>The graph is more useful as a compiler target than as a database.</strong>
+                    I originally imagined agents traversing the knowledge graph directly. In
+                    practice the winning pattern is: agent asks a semantic question → the layer
+                    compiles it against the graph into governed SQL → results come back with
+                    provenance attached. The graph is the source of truth the compiler consults,
+                    not the thing the agent wanders around in.</p>
+
+                <p><strong>Guardrails are a product feature, not a tax.</strong> The moment the
+                    agent could only act inside a sandbox with an explicit tool surface, the
+                    conversation with security and governance teams changed from "no" to "how
+                    fast." In an enterprise, the constraint <em>is</em> the product.</p>
+
+                <p><strong>Most of the work is archaeology.</strong> Fusing five data sources in
+                    wyla, the hard part was never the plumbing — it was deciding which of three
+                    conflicting definitions of "customer" the graph should bless, and recording
+                    why. Building the semantic layer forces the organization to have arguments it
+                    has been deferring for years. That's the value, and it's also why it's
+                    slow.</p>
+
+                <h2>Where this goes</h2>
+
+                <p>Every company is about to discover that their data platform's real customer
+                    base just grew: it's analysts <em>and agents</em> now. The companies that
+                    treat agent-legibility as an architectural requirement — typed definitions,
+                    provenance, protocol-level access — will compound. The ones that bolt a
+                    chatbot onto an unmodeled warehouse will demo well and quietly ship wrong
+                    numbers. I'm betting my working hours on the first group, and
+                    <a href="../bets/">some of my capital too</a>.</p>
+
+                <hr>
+                <p class="meta">Building something in this space, or disagree with the argument?
+                    <a href="mailto:sahebsinghgandh@gmail.com">Email me</a> — I answer.</p>
+            </article>
+        </main>
+
+        <footer class="site-footer">
+            <span>Saheb Singh</span>
+            <a href="https://github.com/bardbyte">GitHub</a>
+            <a href="https://linkedin.com/in/ssg">LinkedIn</a>
+            <a href="mailto:sahebsinghgandh@gmail.com">Email</a>
+        </footer>
+    </div>
+    <script src="../theme-toggle.js" defer></script>
+</body>
+
+</html>

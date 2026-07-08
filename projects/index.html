@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects · bardbyte</title>
+    <meta name="description" content="Projects by Saheb Singh (bardbyte) — each one a write-up of what was built and what it taught.">
+    <link rel="canonical" href="https://bardbyte.github.io/projects/">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../style.css">
+    <script>(function () { var t = localStorage.getItem('theme'); if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark'); })();</script>
+</head>
+
+<body>
+    <div class="page">
+        <header class="site-header">
+            <a class="wordmark" href="../">bardbyte</a>
+            <nav class="site-nav" aria-label="Site">
+                <a href="../writing/">writing</a>
+                <a href="../notes/">notes</a>
+                <a href="../bets/">bets</a>
+                <a href="./" aria-current="page">projects</a>
+                <a href="../now/">now</a>
+                <a href="../about/">about</a>
+                <button id="theme-toggle" type="button" aria-label="Switch theme">☾</button>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Projects</h1>
+            <p class="meta">Things I've built, each with the lesson it taught me. Not a skills
+                grid — the code is on <a href="https://github.com/bardbyte">GitHub</a> if you
+                want to check my work.</p>
+
+            <h2>Current</h2>
+
+            <h3><a href="https://github.com/bardbyte/wyla">wyla</a> — a semantic layer agents can use</h3>
+            <p>A provenance-typed knowledge graph fusing five data sources, served to AI agents
+                over MCP and Google's ADK, with a guardrailed analyst agent running in a Python
+                sandbox. My open-source laboratory for the ideas I work on at Amex.
+                <em>Lesson: design the agent's tool surface around questions, not tables.</em></p>
+
+            <h3><a href="https://github.com/bardbyte/ui-for-ai">ui-for-ai</a> — components for agent interfaces</h3>
+            <p>Nineteen drop-in animated React components for streaming, thinking, and agent
+                workflows — shadcn-compatible, Tailwind v4, Framer Motion. Born from rebuilding
+                the same "agent is thinking…" UI for the third time.
+                <em>Lesson: AI apps have a small, repeating grammar of UI states; codify it once.</em></p>
+
+            <h3><a href="https://github.com/bardbyte/ClaudeWatch">ClaudeWatch</a> — mission control for coding agents</h3>
+            <p>A macOS app to monitor and dispatch multiple Claude Code sessions in parallel.
+                <em>Lesson: once you can see all your agents, you delegate like a manager instead
+                of babysitting like an operator.</em></p>
+
+            <h3><a href="https://github.com/bardbyte/liteagent">liteagent</a> — agents in 3 lines instead of 30</h3>
+            <p>A deliberately minimal agent library, written to find out how much of the
+                framework ceremony is load-bearing. <em>Lesson: less than you'd think — a loop, a
+                tool registry, and a stop condition carry most of the weight.</em></p>
+
+            <h2>Personal</h2>
+
+            <h3><a href="https://github.com/bardbyte/hukam">hukam</a> — the day's Hukamnama</h3>
+            <p>Fetches the daily Hukamnama. A small tool for a daily practice — the kind of
+                software that only needs one user to be worth writing.</p>
+
+            <h3><a href="https://github.com/bardbyte/moneymanagement">moneymanagement</a> &amp; <a href="https://github.com/bardbyte/portfoliorebalancer">portfoliorebalancer</a></h3>
+            <p>A Bloomberg-style personal finance dashboard and a rebalancing tool — where the
+                <a href="../bets/">bets</a> get operationalized. <em>Lesson: building your own
+                money tools forces you to define what you actually believe about risk.</em></p>
+
+            <h2>Earlier</h2>
+
+            <h3>Google Search &amp; Books (2021–2024)</h3>
+            <p>Metadata clustering that cut ingestion time 86%; a partner-selection model for
+                Google Books saving ~$800K/year; a copyright-monitoring service that reduced
+                non-compliance 30%. Details in <a href="../about/">about</a>.</p>
+
+            <h3>Pill Mill Detector (2018)</h3>
+            <p>An ML detector for opioid over-prescription patterns, built at the Code4PA
+                hackathon — won "Most Optimized Solution." My first taste of data work with
+                real-world stakes, and probably the reason I still gravitate to it.</p>
+        </main>
+
+        <footer class="site-footer">
+            <span>Saheb Singh</span>
+            <a href="https://github.com/bardbyte">GitHub</a>
+            <a href="https://linkedin.com/in/ssg">LinkedIn</a>
+            <a href="mailto:sahebsinghgandh@gmail.com">Email</a>
+        </footer>
+    </div>
+    <script src="../theme-toggle.js" defer></script>
+</body>
+
+</html>
