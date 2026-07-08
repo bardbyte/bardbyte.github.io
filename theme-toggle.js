@@ -1,52 +1,22 @@
+// Minimal theme toggle. The inline snippet in <head> applies the saved (or
+// OS-preferred) theme before first paint; this wires up the button.
 document.addEventListener('DOMContentLoaded', () => {
-    const themeCheckbox = document.getElementById('theme-checkbox-input');
-    const htmlElement = document.documentElement; // Gets the <html> element
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
 
-    // Function to apply theme based on preference
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            htmlElement.classList.add('dark-mode');
-            if (themeCheckbox) {
-                themeCheckbox.checked = true;
-            }
-        } else {
-            htmlElement.classList.remove('dark-mode');
-            if (themeCheckbox) {
-                themeCheckbox.checked = false;
-            }
-        }
+    const root = document.documentElement;
+
+    function render() {
+        const dark = root.classList.contains('dark');
+        btn.textContent = dark ? '☀' : '☾';
+        btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
     }
 
-    // Function to save theme preference
-    function saveThemePreference(theme) {
-        localStorage.setItem('theme', theme);
-    }
+    btn.addEventListener('click', () => {
+        const dark = root.classList.toggle('dark');
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+        render();
+    });
 
-    // Load saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else {
-        // Optional: Check for OS preference if no saved theme
-        // const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        // if (prefersDark) {
-        //     applyTheme('dark');
-        // } else {
-        //     applyTheme('light'); // Default to light if no preference
-        // }
-        applyTheme('light'); // Default to light if no preference
-    }
-
-    // Event listener for the theme toggle
-    if (themeCheckbox) {
-        themeCheckbox.addEventListener('change', () => {
-            if (themeCheckbox.checked) {
-                applyTheme('dark');
-                saveThemePreference('dark');
-            } else {
-                applyTheme('light');
-                saveThemePreference('light');
-            }
-        });
-    }
+    render();
 });
